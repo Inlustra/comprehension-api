@@ -1,10 +1,10 @@
 package io.iiInfrastructure.git
 
-import io.iiInfrastructure.Task
+import io.iiInfrastructure.{TaskRuntimeContext, Task}
 
 /**
   * Created by jackliddiard on 15/08/16.
   */
-class GitTask extends Task[GitContext] {
-  def start(context: GitContext): Unit = println(s"Started a ${context.command} against ${context.source}")
+class GitTask extends Task {
+  def start(context: TaskRuntimeContext): Unit = println(s"Started a ${context.asMap.get("command")} against ${context.asMap.get("source")}")
 }

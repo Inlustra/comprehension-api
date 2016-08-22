@@ -1,5 +1,5 @@
 package io.iiInfrastructure
 
-trait Task[C, O] {
-  def start(context: C): O
+trait Task {
+  def start(context: TaskRuntimeContext)
 }

@@ -1,5 +1,7 @@
 package io.iiInfrastructure.git
 
-import java.net.URL
+import io.iiInfrastructure.TaskRuntimeContext
 
-case class GitContext(source: URL, command: String)
+case class GitContext(source: String, command: String) extends TaskRuntimeContext {
+  def asMap: Map[String, _] = Map("source" -> source, "command" -> command)
+}
